@@ -1,0 +1,18 @@
+<div class="z-20 fixed top-0 left-0 right-0">
+    <!-- menu responsivo -->
+    <div class="">
+
+    </div>
+    <!-- deskopt menu  -->
+     <div class="grid grid-cols-8 gap-4">
+        <div class="col-span-2">
+            <img [src]="logo" alt="" class="">
+        </div>
+        <div class="col-span-4 gap-2 flex justify-end">
+            @for (item of nav; track $index) {
+                <span class="px-4 py-2">{{item.label}}</span>
+            }
+        </div>
+        <div class="col-span-2"></div>
+     </div>
+</div>

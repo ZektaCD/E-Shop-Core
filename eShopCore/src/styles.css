@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import "tailwindcss-primeui";
+
+
+body {
+    background-color: #F2F2F2;
+}
