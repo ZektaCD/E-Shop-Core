@@ -5,7 +5,7 @@ import { ShopApi } from '../../../../core/services/shop-api';
   selector: 'shop-navbar',
   standalone: true,
   imports: [
-
+     
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
@@ -19,6 +19,8 @@ export class Navbar {
   ngOnInit(): void {
     this.nav = this.shop_service.getNavSections();
     this.logo = this.shop_service.getNavLogo();
+
   }
 
+  // **/* 
 }

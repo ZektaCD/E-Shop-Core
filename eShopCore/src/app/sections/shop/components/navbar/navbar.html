@@ -1,4 +1,4 @@
-<div class="z-20 fixed top-0 left-0 right-0">
+<div class="z-20 fixed top-0 left-0 right-0 px-8 py-5 bg-amber-900">
     <!-- menu responsivo -->
     <div class="">
 
@@ -6,13 +6,20 @@
     <!-- deskopt menu  -->
      <div class="grid grid-cols-8 gap-4">
         <div class="col-span-2">
-            <img [src]="logo" alt="" class="">
+                <img [src]="logo" alt="" class="w-12 object-fit">
         </div>
-        <div class="col-span-4 gap-2 flex justify-end">
+        <div class="col-span-4 gap-2 flex justify-end capitalize">
             @for (item of nav; track $index) {
-                <span class="px-4 py-2">{{item.label}}</span>
+                <span class="px-4 py-2 text-base">{{item.label}}</span>
             }
         </div>
-        <div class="col-span-2"></div>
+        <div class="col-span-2 flex justify-end gap-4">
+            <span class="text-white">
+                <i class="pi pi-user px-3 py-3 rounded-full"></i>Login
+            </span>
+            <span class="text-white">
+                <i class="pi pi-shopping-cart rounded-full px-3 py-3"></i>Carrito
+            </span>
+        </div>
      </div>
 </div>

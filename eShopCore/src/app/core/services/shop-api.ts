@@ -22,8 +22,8 @@ export class ShopApi {
       }
     ];
     //traigo el logo de la carpeta guardada en la bd del servidor
-    navLogo = './../assets/img/logo/default-logo.png';
-
+    navLogo = 'assets/img/logo/default-logo.png';
+    
     getNavLogo():string{
       return this.navLogo;
     }
