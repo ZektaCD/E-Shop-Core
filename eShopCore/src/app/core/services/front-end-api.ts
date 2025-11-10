@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class FrontEndApi {
 
   private apiUrl = "";
+  #sidebar_state = signal(false);
   // estos vienen de la bd con un get
   navSections = [
       {
@@ -30,6 +31,14 @@ export class FrontEndApi {
 
     getNavSections(): any []{
       return this.navSections;
+    }
+
+    getSidebarOpenState(): boolean {
+      return this.#sidebar_state();
+    }
+
+    setSidebarCartState(data: boolean){
+      this.#sidebar_state.set(data);
     }
 
 }

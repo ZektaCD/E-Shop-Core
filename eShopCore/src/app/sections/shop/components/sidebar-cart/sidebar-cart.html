@@ -1,1 +1,75 @@
-<p>sidebar-cart works!</p>
+<div
+  class="sidebar-cart"
+  [ngClass]="{
+    'animate-fade-in-left': frontEnd_service.getSidebarOpenState(),
+    'animate-slide-out-right': !frontEnd_service.getSidebarOpenState()
+  }"
+>
+  <div class="sidebar-cart-header relative bg-neutral-200 flex justify-center items-center">
+    <span class="text-lg font-bold uppercase">mi compra</span>
+    <span class="absolute right-2 cursor-pointer" (click)="closeSideBarCart()">
+      <fa-icon [icon]="faclose" />
+    </span>
+  </div>
+  <div class="sidebar-cart-content gap-y-2 py-2 overflow-y-scroll">
+    @if(shop_service.getAmountItemsInCart() > 0){ 
+        @for (item of shop_service.getItemsInCart(); track $index) {
+            <shop-cart-product-item [data_item_cart]="item" [position]="$index"></shop-cart-product-item>
+        }
+    }
+    @else{
+        <div class="flex flex-col justify-center items-center px-2 py-2 ">
+            <p class="text-sm">No veo items en el carrito</p>
+            <p class="text-lg font-bold uppercase">¡es hora de agregar!</p>
+            <span class="text-5xl py-5">
+                <fa-icon [icon]="facartAD"></fa-icon>
+            </span>
+        </div>
+    }
+  </div>
+  <div class="w-full sidebar-cart-footer shadow-neutral-200 inset-shadow-2xs">
+    <div class="flex flex-col items-center px-4">
+      <div class="flex justify-between flex-wrap py-2 w-full">
+        <span class="flex items-center gap-2">
+          <fa-icon [icon]="fatruck" />
+          <input class="text-sm" [(ngModel)]="shipping_data" placeholder="Introducir tu CP" />
+        </span>
+        <span class="flex items-center gap-1">
+          <p class="text-sm uppercase font-bold">Calcular envío</p>
+          <fa-icon [icon]="fachevronright" />
+        </span>
+      </div>
+      <div class="grow-1 text-xs w-full">
+        <hr class="text-neutral-300" />
+        <!-- aca poner en el detalle el costo de envío  -->
+        <ul class="text-neutral-700 py-1">
+          <li class="flex justify-between">
+            <p class="text-start">Subtotal (sin IVA)</p>
+            <p class="text-end">$99999</p>
+          </li>
+          <li class="flex justify-between">
+            <p class="text-start">Descuentos</p>
+            <p class="text-end">-$9999</p>
+          </li>
+          <li class="flex justify-between">
+            <p class="text-start">Impuestos nacionales</p>
+            <p class="text-end">$999</p>
+          </li>
+          <li class="flex justify-between">
+            <p class="text-start">Envío</p>
+            <p class="text-end">$99999</p>
+          </li>
+        </ul>
+        <div class="flex justify-between">
+          <span class="text-lg font-bold">Total</span>
+          <span class="text-lg font-bold">$199999</span>
+        </div>
+      </div>
+      <div class="flex py-4 w-full">
+        <button type="button" class="w-full px-6 py-2 bg-neutral-800 text-white rounded-2xl">
+          Finalizar compra
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

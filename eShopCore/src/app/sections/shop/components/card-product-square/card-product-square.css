@@ -1,4 +1,5 @@
 .input-shop-card-square::-webkit-inner-spin-button,
 .input-shop-card-square::-webkit-outer-spin-button{
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
+  -webkit-appearance: none;
 }

@@ -1,0 +1,36 @@
+<div class="grid grid-cols-8 gap-1 px-2 py-2 item-list-cart">
+    <div class="col-span-2 overflow-hidden">
+        <img src="/assets/img/default-image.jpg" alt="" class="object-fit h-full" />
+    </div>
+    <div class="col-span-4 flex flex-col justify-between">
+        <div class="">
+        <p class="text-sm truncate">{{ data_item_cart().item.name }}</p>
+        <p class="text-sm">Talle: 11</p>
+        <p class="text-emerald-500">{{data_item_cart().item.stock}}</p>
+        </div>
+        <div class="rounded-2xl border-1 border-neutral-300 w-24 flex h-8 text-center">
+        <span
+            class="text-xs rounded-tl-2xl rounded-bl-2xl px-1.5 flex justify-center items-center hover:bg-neutral-300 cursor-pointer"
+            (click)="decreaseQuantity()"
+            >
+            <fa-icon [icon]="faminus" />
+        </span>
+        <span class="grow-1 flex justify-center items-center">{{ data_item_cart().quantity }}</span>
+        <span
+            class="text-xs rounded-tr-2xl rounded-br-2xl px-1.5 flex justify-center items-center hover:bg-neutral-300 cursor-pointer"
+            (click)="addQuantity()"
+            >
+            <fa-icon [icon]="faplus" />
+        </span>
+        </div>
+    </div>
+    <div class="col-span-2 text-end flex flex-col justify-between">
+        <span class="cursor-pointer" (click)="deleteItem()">
+            <fa-icon [icon]="fatrash" class="hover:text-red-400" />
+        </span>
+        <span class="flex flex-col">
+        <p class="">${{ data_item_cart().total_amount }}</p>
+        <p class="text-sm text-neutral-300 line-through">$130000</p>
+        </span>
+    </div>
+</div>

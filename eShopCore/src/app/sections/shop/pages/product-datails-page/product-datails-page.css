@@ -1,0 +1,19 @@
+.product-details-page{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100px 1fr 1fr 1fr 200px;
+    grid-template-areas: 
+        'header'
+        'shopi-sec'
+        'description-sec'
+        'relevant-prods-sec'
+        'footer'
+    ;
+}
+
+.bicolor-item-selector{
+    background-color: blue;
+    clip-path: polygon(0 0, 100% 0, 0 100%, 0 50%);
+    width: 100%;
+    height: 100%;
+}

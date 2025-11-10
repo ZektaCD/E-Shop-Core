@@ -1,6 +1,21 @@
-<shop-navbar></shop-navbar>
-<div class="mt-50">
-  <shop-card-product-square></shop-card-product-square>
+<div class="catalog-page">
+  <div class="nav bg-amber-400">
+    <shop-navbar></shop-navbar>
+  </div>
+  <div class="sidebar bg-red-400">
+    <!-- <h2 class="">Filtros</h2> -->
+  </div>
+  <div class="catalog bg-blue-300 my-10">
+    <div class="grid grid-cols-3 gap-3">
+      @for (item of shop_service.getSignalProducts(); track $index) {
+          <shop-card-product-square [data_card]="item"></shop-card-product-square>
+      }
+    </div>
+  </div>
+  <div class="footer bg-neutral-800 h-50"></div>
 </div>
-<!-- <p class="text-2xl">catalog works!</p>
-<p-button label="Check" /> -->
+@if (frontEnd_service.getSidebarOpenState()) {
+  <div class="sb-cart-back animate-fade-in">
+      <shop-sidebar-cart></shop-sidebar-cart>
+  </div>
+}

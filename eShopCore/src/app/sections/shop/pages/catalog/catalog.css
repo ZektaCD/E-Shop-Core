@@ -1,0 +1,55 @@
+.catalog-page {
+  width: 100%;
+  background: cyan;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 80px 1fr 200px;
+  grid-template-areas:
+    'nav nav'
+    'sidebar catalog'
+    'footer footer';
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 80px; 
+  height: calc(100vh - 80px); 
+}
+
+.catalog {
+  grid-area: catalog;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.sb-cart-back{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    display: flex;
+    justify-content: end;
+    backdrop-filter: brightness(50%);
+    background-color: rgba(0,0,0,0.3);
+}
+
+.backdrop-style {
+  --status: attr(data-status type(<custom-ident>));
+  
+}
+
+/* .sb-cart{
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+} */

@@ -3,7 +3,7 @@ import { Product } from "./product-type";
 export interface CartProduct {
   item: Product,
   quantity: number,
-  total_amount: string
+  total_amount: number
 }
 
 
