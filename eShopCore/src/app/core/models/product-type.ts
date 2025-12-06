@@ -39,3 +39,4 @@ export interface Category {
 }
 
 export interface Subcategory extends Omit<Category,'subcategories'> {}
+

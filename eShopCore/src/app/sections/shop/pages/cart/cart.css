@@ -1,0 +1,20 @@
+.cart-layout{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr auto;
+    grid-template-areas: 
+        nav nav
+        items-cart summary-cart
+        footer footer
+        ;   
+}
+
+.items-cart{
+    grid-area: items-cart;
+    
+}
+
+.sumary-cart{
+    grid-area: summary-cart;
+}

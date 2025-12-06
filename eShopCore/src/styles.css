@@ -9,3 +9,9 @@ body {
     background-color: #F2F2F2;
     color: black;
 }
+
+html{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}

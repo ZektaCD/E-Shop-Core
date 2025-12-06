@@ -8,14 +8,9 @@
   <div class="catalog bg-blue-300 my-10">
     <div class="grid grid-cols-3 gap-3">
       @for (item of shop_service.getSignalProducts(); track $index) {
-          <shop-card-product-square [data_card]="item"></shop-card-product-square>
+          <shop-card-product [data_card]="item"></shop-card-product>
       }
     </div>
   </div>
   <div class="footer bg-neutral-800 h-50"></div>
 </div>
-@if (frontEnd_service.getSidebarOpenState()) {
-  <div class="sb-cart-back animate-fade-in">
-      <shop-sidebar-cart></shop-sidebar-cart>
-  </div>
-}

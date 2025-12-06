@@ -5,15 +5,15 @@ import { CartProduct } from '../../../../core/models/shoppi-type';
 import { ShoppingApi } from '../../../../core/services/shopping-api';
 
 @Component({
-  selector: 'shop-card-product-square',
+  selector: 'shop-card-product',
   standalone: true,
   imports: [
     FormsModule
   ],
-  templateUrl: './card-product-square.html',
-  styleUrl: './card-product-square.css'
+  templateUrl: './card-product.html',
+  styleUrl: './card-product.css'
 })
-export class CardProductSquare implements OnInit{
+export class CardProduct implements OnInit{
 
   shop_service = inject(ShoppingApi);
   stock = 10;

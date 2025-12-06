@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
 import { faCartArrowDown, faChevronRight, faClose, faMinus, faPlus, faTrash, faTruck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
@@ -41,4 +41,12 @@ export class SidebarCart {
       this.frontEnd_service.setSidebarCartState(false);
   }
 
+  @ViewChild('sidebarcart') sidebarcart!: ElementRef;
+
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: MouseEvent){
+    if(this.frontEnd_service.getSidebarOpenState() && !this.sidebarcart.nativeElement.contains(event.target)){
+      this.frontEnd_service.setSidebarCartState(false);
+    } 
+  }
 }

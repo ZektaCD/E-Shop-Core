@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { FrontEndApi } from '../../../../core/services/front-end-api';
 import { ShoppingApi } from '../../../../core/services/shopping-api';
+import { SidebarCart } from '../sidebar-cart/sidebar-cart';
 
 @Component({
   selector: 'shop-navbar',
   standalone: true,
   imports: [
-
-  ],
+      SidebarCart
+    ],
   templateUrl: './shop-navbar.html',
   styleUrl: './shop-navbar.css'
 })

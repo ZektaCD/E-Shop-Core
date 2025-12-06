@@ -1,64 +1,97 @@
 <div class="product-details-page">
-  <div class="header"></div>
-  <div class="shopi-sec flex flex-wrap px-40">
+  <div class="header">
+    <shop-navbar></shop-navbar>
+  </div>
+  <div class="shopi-sec flex flex-wrap align-top px-40">
     <div class="bg-amber-100 grid grid-cols-6">
-      <div class="col-span-1 flex flex-col basis-0 items-center">
-        <span class="grow-1 content-center">
+      <div class="col-span-1 flex flex-col basis-0 items-center h-9/12 gap-4">
+        <span class="content-center">
           <img src="/assets/img/default-image.jpg" alt="" class="w-20 rounded-sm" />
         </span>
-        <span class="grow-1 content-center">
+        <span class="content-center">
           <img src="/assets/img/default-image.jpg" alt="" class="w-20 rounded-sm" />
         </span>
-        <span class="grow-1 content-center">
+        <span class="content-center">
           <img src="/assets/img/default-image.jpg" alt="" class="w-20 rounded-sm" />
         </span>
-        <span class="grow-1 content-center">
+        <span class="content-center">
           <img src="/assets/img/default-image.jpg" alt="" class="w-20 rounded-sm" />
         </span>
-        <span class="grow-1 content-center">
+        <span class="content-center">
           <img src="/assets/img/default-image.jpg" alt="" class="w-20 rounded-sm" />
         </span>
       </div>
-      <div class="col-span-5">
+      <div class="col-span-5 h-auto">
         <span class="rounded-xl">
           <img src="/assets/img/default-image.jpg" alt="" class="w-lg rounded-sm" />
         </span>
       </div>
     </div>
-    <div class="bg-amber-500 flex-1 mx-12 py-14">
-      <div class="flex flex-col mb-4">
-        <span class="text-3xl font-bold">El Titulo del producto</span>
-        <span class="text-neutral-300">Subtitulo del producto</span>
-      </div>
-      <div class="flex gap-2">
-        <span class="text-sm line-through text-neutral-500">$9990,99</span>
-        <span class="text-xl font-bold">$9990,99</span>
-      </div>
-      <div class="">
-        <span class="font-bold">Stock</span>
-      </div>
-      <div class="">
-        <span class="">10% descuento en transferencia | 6 cuotas s/ interés</span>
-      </div>
-      <!-- SELECCION DE COLORES  -->
-      <div class="">
-        <span class="font-bold text-sm">Titulo de la sección</span>
+    <div class="flex-1 mx-12 py-14">
+      <div class="w-9/12 mx-auto">
+        <div class="flex flex-col mb-4">
+          <span class="text-3xl font-bold">{{shop_service.getOpenedProduct().name}}</span>
+          <span class="text-neutral-500 my-2">Subtitulo del producto</span>
+        </div>
         <div class="flex gap-2">
-          <span class="w-6 h-6 bg-green-300 color-item-selector"> </span>
-          <span class="w-6 h-6 bg-green-300">
-            <p class="bicolor-item-selector"></p>
+          <span class="text-sm line-through text-neutral-500 hidden">$9990,99</span>
+          <span class="text-3xl font-bold my-2">${{shop_service.getOpenedProduct().price}}</span>
+        </div>
+        <div class="">
+          <span class="font-bold">Stock</span>
+        </div>
+        <div class="">
+          <span class="">10% descuento en transferencia | 6 cuotas s/ interés</span>
+        </div>
+        <!-- SELECCION DE COLORES  -->
+        <div class="my-2">
+          <span class="font-bold text-sm">Titulo de la sección</span>
+          <div class="flex gap-2">
+            <span class="w-6 h-6 bg-green-300 color-item-selector"> </span>
+            <span class="w-6 h-6 bg-green-300">
+              <p class="bicolor-item-selector"></p>
+            </span>
+          </div>
+        </div>
+        <!-- SELECCION DE TALLES -->
+        <div class="flex flex-wrap gap-2 my-2 basis-0">
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">6</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white filter-size-block">6.5</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">7</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">7.5</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">8</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">8.5</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white filter-size-block">9</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white filter-size-block">9.5</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">10</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">10.5</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white filter-size-block">11</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">11.5</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">12</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white">12.5</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white filter-size-block">13</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white filter-size-block">13.5</span>
+          <span class="w-16 py-2 border-1 border-neutral-400 rounded-md text-center cursor-pointer hover:bg-neutral-900 hover:text-white filter-size-block">14</span>
+        </div>
+        <div class="flex my-2 gap-1">
+          <span class="cursor-pointer px-2 rounded border-1 border-neutral-300 text-center flex items-center text-xs hover:bg-neutral-300" (click)="decreaseQ()">
+            <fa-icon [icon]="faminus" />
+          </span>
+          <input type="number" class="h-12 rounded text-center bg-neutral-200 px-4 input-quantity" [(ngModel)]="quantity" min="1" [max]="shop_service.getOpenedProduct()!.stock">
+          <span class="cursor-pointer px-2 rounded border-1 border-neutral-300 text-center flex items-center text-xs hover:bg-neutral-300" (click)="addQ()">
+            <fa-icon [icon]="faplus" />
           </span>
         </div>
-      </div>
-      <!-- SELECCION DE TALLES -->
-       <div class="grid grid-cols-5 w-8/12">
-        <span class="col-span-1 border-2 rounded-xl">6</span>
-       </div>
-      <div class="flex">
-        <span
-          class="w-9/12 px-4 py-4 rounded-3xl bg-neutral-800 text-white text-center cursor-pointer hover:bg-neutral-700"
-          >Agregar al carrito</span
-        >
+        <div class="flex flex-col gap-2">
+          <span
+            class="w-full px-4 py-4 rounded-3xl bg-neutral-800 text-white text-center cursor-pointer hover:bg-neutral-700"
+            (click)="addToCart()">Agregar al carrito</span
+          >
+          <span
+            class="w-full px-4 py-4 rounded-3xl border-1 border-neutral-400 text-neutral-600 text-center cursor-pointer hover:bg-neutral-700 hover:text-white"
+            >Favorito<fa-icon [icon]="faHeart" class="ps-2"/></span
+          >
+        </div>
       </div>
     </div>
   </div>

@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import { Navbar } from '../../components/shop-navbar/shop-navbar';
 
 @Component({
   selector: 'app-cart',
-  imports: [],
+  standalone: true,
+  imports: [
+    Navbar
+  ],
   templateUrl: './cart.html',
   styleUrl: './cart.css'
 })

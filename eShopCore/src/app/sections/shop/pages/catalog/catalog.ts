@@ -3,7 +3,7 @@ import { ShoppingApi } from '../../../../core/services/shopping-api';
 import { FrontEndApi } from '../../../../core/services/front-end-api';
 import { Navbar } from '../../components/shop-navbar/shop-navbar';
 import { ButtonModule } from 'primeng/button';
-import { CardProductSquare } from '../../components/card-product-square/card-product-square';
+import { CardProduct } from '../../components/card-product-square/card-product';
 import { SidebarCart } from '../../components/sidebar-cart/sidebar-cart';
 import { NgClass } from '@angular/common';
 
@@ -14,7 +14,7 @@ import { NgClass } from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     ButtonModule,
-    CardProductSquare,
+    CardProduct,
     SidebarCart,
     Navbar,
     NgClass

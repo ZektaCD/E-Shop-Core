@@ -17,3 +17,33 @@
     width: 100%;
     height: 100%;
 }
+
+.filter-size-selected {
+    background-color: rgb(23 23 23);
+    color: white;
+}
+
+.filter-size-block {
+    position: relative;
+    display: inline-block; /* necesario para que el ::after se posicione correctamente */
+    overflow: hidden; 
+    background-color: #f2f2f2;
+    color: gray;
+}
+
+.filter-size-block::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 141%; /* √2 ≈ 1.41, para cubrir completamente la diagonal */
+    height: 1.5px; /* grosor de la línea */
+    background-color: lightgrey; /* usa el mismo color que el texto, o cámbialo */
+    transform: rotate(-32deg);
+    transform-origin: left bottom;
+}
+
+.input-quantity::-webkit-inner-spin-button,
+.input-quantity::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+}

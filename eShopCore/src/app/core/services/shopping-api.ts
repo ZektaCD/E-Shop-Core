@@ -369,6 +369,56 @@ export class ShoppingApi {
     },
   ]);
   #cart_signal = signal<CartProduct[]>([]);
+  #opened_product = signal<Product>({
+      id_db: 1,
+      sku: 'PROD-001',
+      name: 'Café en grano Patagonia 1kg',
+      cost: 3500,
+      description: 'Café de especialidad tostado en origen, notas a chocolate y nuez.',
+      price: 5900,
+      off_percent: 10,
+      category: {
+        id_db: 1,
+        name: 'Café',
+        off_percent: 5,
+        subcategories: [
+          {
+            id_db: 11,
+            name: 'Grano',
+          },
+          {
+            id_db: 12,
+            name: 'Molido',
+          },
+        ],
+      },
+      active: true,
+      stock: 14,
+      suppliers: [
+        {
+          id_db: 1,
+          name: 'Andes Coffee Supply',
+          cuit: '30-71234567-2',
+          email: 'contacto@andescoffee.com',
+          telephone: '299-4556677',
+          adress: 'Av. Patagonia',
+          adress_number: '1450',
+          adress_unit: 'Depósito 3',
+          city: 'Neuquén',
+          commits: 'Entrega semanal',
+          categories_associated: [
+            {
+              id_db: 1,
+              name: 'Café',
+            },
+          ],
+          active: true,
+        },
+      ],
+      stock_state: true,
+      created_date: '2025-08-01T10:30:00Z',
+      edited_date: '2025-09-10T12:45:00Z',
+    });
 
   constructor(){
     this.loadItemsCart();
@@ -436,4 +486,10 @@ export class ShoppingApi {
   getAmountItemsInCart(): number{
     return this.#cart_signal().length;
   }
+
+  getOpenedProduct(): Product {
+    return this.#opened_product();
+  }
+
+
 }

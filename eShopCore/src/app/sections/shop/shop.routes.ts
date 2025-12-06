@@ -15,6 +15,6 @@ export const SHOP_ROUTES: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'product'
+        redirectTo: 'cart'
     }
 ];
